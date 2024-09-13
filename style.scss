@@ -1,0 +1,604 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+/* Variables */
+$rubik: "Rubik", sans-serif;
+$quicksand: "Quicksand", sans-serif;
+$playfair: "Playfair Display", serif;
+$inter: "Inter", sans-serif;
+$green: #18302B;
+$orange: #AF8958;
+$light-green:rgba(#18302B,0.03);
+$dark-gray: #1E1E1E;
+$border-color: #B6B6B6;
+
+/* Global */
+h2 {
+    font-family: $rubik;
+    font-size: 48px;
+    margin-left: 200px;
+}
+h3 {
+    font-family: $rubik;
+    font-size: 40px;
+    text-align: center;
+}
+
+/* Header */
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: $green;
+    padding: 10px 50px;
+    box-sizing: border-box;
+    height: 100px;
+
+    &__logo {
+        height: 25px;
+        width: auto;
+    }
+    &__links {
+        display: flex;
+        gap: 30px;
+    }
+    &__link {
+        position: relative;
+        color: white;
+        font-family: $quicksand;
+        text-decoration: none;
+        font-size: 16px;
+        font-weight: 400;
+        padding-bottom: 5px;
+        display: inline-block;
+        overflow: hidden;
+        &:hover {
+            font-weight: 500;
+            border-bottom-color: $orange;
+            &::after {
+                transform: translateX(0);
+            }
+        }
+        &::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            height: 2px;
+            background-color: $orange;
+            transform: translateX(-100%);
+            transition: transform 0.3s ease;
+        }
+    }
+}
+
+/* Header */
+.header {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    &__content {
+        background-image: url('assets/header.png');
+        background-size: cover;
+        background-repeat: no-repeat;
+        height: 600px;
+        z-index: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+        padding-left: 50px;
+        box-sizing: border-box;
+    }
+    &__title {
+        color: white;
+        font-family: $playfair;
+        font-size: 10vh;
+    }
+}
+
+.button {
+    background-color: white;
+    color: #333333;
+    width: 164px;
+    font-family: $quicksand;
+    cursor: pointer;
+    border: none;
+    padding: 10px;
+    &--header {
+        margin-top: 20px;
+    }
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    margin: 0 auto;
+}
+
+.img-souris {
+    display: block;
+    margin: 20px auto;
+}
+
+/* About */
+.about {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100%;
+    box-sizing: border-box;
+    &__block {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 50px;
+        box-sizing: border-box;
+    }
+    &__image {
+        width: 50%;
+        transition: transform 0.3s ease; 
+        &:hover {
+            transform: scale(1.1);
+        }
+    }
+    &__text {
+        width: 70%;
+        max-width: 500px;
+        &--right {
+            margin-left: 150px;
+        }
+        &--left {
+            margin-right: 150px;
+        }
+    }
+    &__paragraph {
+        font-family: $quicksand;
+        font-size: 20px;
+        text-align: justify;
+    }
+}
+
+/* Icon Banner */
+.icon-banner {
+    background-color: $green;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    flex-direction: column;
+    &__title{
+        color:white;
+        margin:20px auto;
+    }
+    &__icons {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        width: 75%;
+        img{
+            transition: transform 0.7s ease;
+            &:hover{
+                transform: rotate(360deg);
+            }
+        }
+        
+    }
+    &__icon {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 50px;
+    }
+    &__text {
+        color: white;
+        font-family: $quicksand;
+    }
+}
+
+/* Video */
+.video {
+    margin: 100px auto;
+    width: auto;
+    max-width: 100%;
+}
+
+/* Clients */
+.clients {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: $light-green;
+    &__description {
+        font-family: $quicksand;
+        color: $dark-gray;
+    }
+    &__cards {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+    }
+    &__card {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 380px;
+        height: 380px;
+        background-color: white;
+        margin: 30px;
+        padding: 15px;
+        border-radius: 15px;
+    }
+    &__name {
+        font-family: $quicksand;
+        font-size: 16px;
+    }
+    &__position {
+        font-family: $quicksand;
+        margin: 0 auto;
+        font-size: 12px;
+        color: gray;
+    }
+    &__testimonial {
+        font-size: 16px;
+        text-align: justify;
+        width: 75%;
+        margin: 20px auto;
+    }
+    &__profile-pic {
+        height: 90px;
+        width: 90px;
+    }
+    &__logo-telekom {
+        height: 20px;
+        width: 63px;
+        bottom: 0;
+    }
+}
+
+/* Blog */
+.blog {
+    &__cards {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        justify-content: space-evenly;
+    }
+    &__card {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 346px;
+    }
+    &__date {
+        width: 346px;
+        color: gray;
+    }
+    &__content {
+        font-family: $quicksand;
+        text-align: justify;
+        font-size: 14px;
+    }
+    &__image {
+        height: 300px;
+        width: 346px;
+    }
+    &__subtitle {
+        font-size: 20px;
+        margin: 0;
+    }
+}
+
+.button--blog {
+    border: 1px solid $border-color;
+    border-radius: 20px;
+    margin: 30px auto;
+}
+
+/* Contact */
+.contact-banner {
+    display: flex;
+    flex-direction: row;
+    background-color: $light-green;
+    justify-content: center;
+    align-items: center;
+    gap: 100px;
+}
+
+.button--contact {
+    background-color: $green;
+    color: white;
+    height: fit-content;
+}
+
+/* Contact Form */
+.contact-form {
+    &__content {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+    }
+    &__information {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    &__form {
+        display: flex;
+        flex-direction: column;
+        width: 690px;
+        gap: 10px;
+    }
+    &_info-item {
+        font-family: $inter;
+        font-size: 19px;
+    }
+    &__input {
+        height: 35px;
+        border: 1px solid #868686;
+        &::placeholder {
+            font-family: $inter;
+            font-size: 16px;
+            color: #868686;
+        }
+    }
+    &__textarea {
+        background-color: #F4F4F4;
+        border: none;
+        height: 180px;
+        &::placeholder {
+            font-family: $inter;
+            font-size: 16px;
+            color: #868686;
+        }
+    }
+    &__submit {
+        display: flex;
+        justify-content: flex-end;
+    }
+}
+
+.button--submit {
+    color: white;
+    background-color: #737373;
+}
+
+/* Footer */
+.footer {
+    background-color: $green;
+    font-family: $inter;
+    padding: 15px;
+    margin-top: 15px;
+    &__content {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        justify-content: space-evenly;
+    }
+    &__logo {
+        height: 30px;
+        &-container {
+            display: flex;
+            align-items: center;
+        }
+    }
+    &__industries, &__company {
+        display: flex;
+        flex-direction: column;
+        color: white;
+    }
+    &__title {
+        font-weight: 500;
+    }
+    &__list {
+        list-style: none;
+    }
+    &__link {
+        text-decoration: none;
+        font-size: 14px;
+        font-weight: 100;
+        color: white;
+    }
+    &__form {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        &-content {
+            background-color: #4D5957;
+            border-radius: 5px;
+        }
+    }
+    &__input {
+        background-color: transparent;
+        border: none;
+        width: auto;
+        padding: 10px;
+        &::placeholder {
+            color: white;
+        }
+    }
+    &__icons {
+        display: flex;
+        align-items: flex-start;
+        width: 100%;
+        gap: 15px;
+        margin: 10px;
+    }
+    &__credits {
+        color: white;
+        text-align: center;
+        font-size: 12px;
+        font-weight: 100;
+        margin-top: 20px;
+    }
+}
+
+.button--footer-form {
+    width: 80px;
+    background-color: white;
+    border-radius: 5px;
+    margin: 10px;
+}
+
+
+/*Responsive*/
+/*Responsive*/
+@media screen and (max-width: 986px) {
+
+    body {
+        margin: 0 10px;
+    }
+
+    /* Global */
+    h2, h3 {
+        margin-left: 0;
+        text-align: center;
+        font-size: 24px;
+    }
+
+    /* Header */
+    .nav__links {
+        display: none;
+    }
+
+    .menu-burger {
+        display: flex;
+    }
+
+    .nav__mobile-links.show {
+        display: block;
+    }
+
+    .header__content {
+        padding-left: 20px;
+        align-items: center;
+        text-align: center;
+        height: auto;
+        &__title {
+            font-size: 8vh;
+            text-align: center;
+        }
+    }
+
+    .button {
+        margin: 10px auto;
+    }
+
+    /* About */
+    .about {
+        &__block {
+            flex-direction: column;
+            margin-bottom: 30px;
+        }
+        &__image {
+            width: 80%; 
+            margin-bottom: 20px;
+        }
+        &__text {
+            margin-left: 0;
+            margin-right: 0;
+            width: 100%;
+            max-width: none;
+        }
+    }
+
+    /* Icon Banner */
+    .icon-banner{
+        &__icons {
+            flex-direction: column;
+            width: 100%;
+        }
+
+        &__icon {
+            margin-bottom: 20px;
+        }
+    }
+
+    /* Vidéo */
+    .video {
+        margin: 50px auto;
+        width: 100%; 
+    }
+
+    .video__image {
+        width: 100%; 
+        height: auto;
+    }
+
+    /* Clients Section */
+    .clients{
+        &__cards {
+            flex-direction: column;
+        }
+
+        &__card {
+            width: 100%;
+            margin: 15px 0;
+        }
+    }
+
+    /* Blog Section */
+    .blog{
+        &__cards {
+            flex-direction: column;
+        }
+        &__card {
+            width: 100%;
+            margin-bottom: 20px;
+        }
+    }
+
+    /* Contact Banner */
+    .contact-banner {
+        flex-direction: column;
+        gap: 20px;
+        padding: 20px;
+    }
+
+    /* Contact */
+    .contact-form{
+        &__content {
+            flex-direction: column;
+        }
+
+        &__information, &__form {
+            width: 100%;
+        }
+    }
+
+    /* Footer */
+    .footer{
+        &__content {
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        &_industries, &__company {
+            margin-bottom: 20px;
+        }
+
+        &__form-content {
+            flex-direction: column;
+            align-items: center;
+        }
+
+        &__input {
+            margin-bottom: 10px;
+        }
+
+        &__icons {
+            justify-content: center;
+        }
+    }
+}
